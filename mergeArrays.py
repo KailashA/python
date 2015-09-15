@@ -1,23 +1,30 @@
-#!/usr/bin/env python
 
-#Chandu is very fond of strings. (Or so he thinks!) But, he does not like strings which have same consecutive letters. No one has any idea why it is so. He calls these strings as Bad strings. So, Good strings are the strings which do not have same consecutive letters. Now, the problem is quite simple. Given a string S, you need to convert it into a Good String.
-#You simply need to perform one operation - if there are two same consecutive letters, delete one of them.
-##Input:
-##The first line contains an integer T, denoting the number of test cases.
-##Each test case consists of a string S, which consists of only lower case letters.
-##Output:
-##For each test case, print the answer to the given problem.
+#merge two sorted arrays
 
+def mergeSortedArrays(a,b,n,m):
+    k=0,i=0j=0
+    while(i<n and j<m):
+        if(a[i] >= b[j]):
+            result[k++]=a[i++]
+        else:
+            reslut[k++]=b[j++]
+    if(i<n):
+        for p in range(i,n):
+            result[k++]=a[p]
+    else:
+        for p in range(i,m):
+            result[k++]=b[p]
 
 tc=input();
 for i in range(tc):
-    string=raw_input()
-    output=""
-    for k in range(len(string)):
-        if(len(output)==0 or output[len(output)-1] != string[k]):
-            output+=string[k]
-    print(output)    
+     inA,inB=raw_input().split();
+     n=int(inA)
+     m=int(inB)
+     arr1=list(map(int, raw_input().strip().split(" ")))
+     arr2=list(map(int, raw_input().strip().split(" ")))
 
-
-            
-    
+     result=merge(arr1,arr2,n,m)
+     for x in result:
+        print x,
+    print ""
+     

@@ -8,3 +8,9 @@
 ##For each query, print YES if the X is in the array, otherwise print NO.
 
    
+tc=input()
+arr=list(map(int, raw_input().strip().split(" ")))
+arr.sort()
+for x in arr:
+    print x,
+print ""
